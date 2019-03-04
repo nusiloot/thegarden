@@ -1,2 +1,2 @@
 # thegarden
-Personal project
+The Garden
