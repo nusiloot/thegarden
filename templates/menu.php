@@ -34,7 +34,7 @@
             Admin
         </li>
         <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a href="/orders.php">All orders</a>
+            <a href="/orders.php?all">All orders</a>
             <span class="badge badge-primary badge-pill"><?php echo Order::getTotalOrder(); ?></span>
         </li>
         <li class="list-group-item d-flex justify-content-between align-items-center">

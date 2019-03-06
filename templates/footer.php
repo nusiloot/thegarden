@@ -4,6 +4,9 @@
                 </div>
             </div>
         </div>
+        <!-- <div id="copyright">
+            &copy; gwen001 <?php echo date('Y'); ?>
+        </div> -->
         <script src="/static/js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){

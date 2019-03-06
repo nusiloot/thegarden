@@ -7,7 +7,7 @@ if( !$_user ) {
     exit();
 }
 
-if( $_user->getIsAdmin() ) {
+if( $_user->getIsAdmin() && isset($_GET['all']) ) {
     $t_order = Order::getOrderList();
 } else {
     $t_order = Order::getOrderList( $_user->getId() );

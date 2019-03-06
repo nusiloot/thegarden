@@ -33,4 +33,19 @@
         unset( $_SESSION['notif'] );
         return true;
     }
+
+
+    public static function getFileExtension( $filename )
+    {
+        return substr( $filename, strrpos($filename,'.')+1 );
+    }
+
+
+    public static function generateFilename( $str, $extension )
+    {
+        $str = preg_replace( '#[^a-zA-Z0-9]#', '-', $str );
+        $str = uniqid( 'P' );
+
+        return $str.'.'.$extension;
+    }
 }

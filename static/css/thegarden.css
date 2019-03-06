@@ -22,6 +22,17 @@ h2 {
 h3 {
     margin-bottom: 50px;
 }
+.custom-file {
+    margin-bottom: 15px;
+}
+#copyright {
+    font-size: 0.8em;
+    margin-top: 20px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 999;
+}
 #alert-container {
     margin-top: 20px;
     position: absolute;
@@ -56,6 +67,10 @@ h3 {
     margin-right: 20px;
     width: 31%;
 
+}
+.admin-action {
+    float: right;
+    margin-right: 10px;
 }
 .page-cart th, .page-cart td {
     vertical-align: middle;

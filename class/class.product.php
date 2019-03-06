@@ -75,6 +75,45 @@ class Product
     }
 
 
+    public function save()
+    {
+        $db = Database::getInstance()->getConnection();
+
+        $q = "INSERT INTO product (name,descr,price,image) VALUES (
+            '".$this->name."',
+            '".$this->descr."',
+            '".$this->price."',
+            '".$this->image."'
+        )";
+        
+        return $db->query( $q );
+    }
+
+
+    public function update()
+    {
+        $db = Database::getInstance()->getConnection();
+
+        $q = "UPDATE product set 
+                    name='".$this->name."'
+                    , descr='".$this->descr."'
+                    , price='".$this->price."'
+                WHERE id='".$this->getId()."'";
+        
+        return $db->query( $q );
+    }
+
+
+    public function delete()
+    {
+        $db = Database::getInstance()->getConnection();
+
+        $q = "DELETE FROM product WHERE id='".$this->id."'";
+        
+        return $db->query( $q );
+    }
+
+    
     public static function getProduct( $id )
     {
         $db = Database::getInstance()->getConnection();

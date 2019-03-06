@@ -42,8 +42,8 @@ $_cart = Cart::getInstance();
             Util::removeNotification();
         } ?>
         <div id="header">
-            <h1 <?php if( $_user && $_user->getIsAdmin() ) { ?>class="admin"<?php } ?>>The garden</h1>
-            <h2 <?php if( $_user && $_user->getIsAdmin() ) { ?>class="admin"<?php } ?>>fresh fruits and vegetables</h2>
+            <h1>The garden</h1>
+            <h2>fresh fruits and vegetables</h2>
         </div>
         <div id="page-container" class="container">
             <div class="row">

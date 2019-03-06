@@ -28,8 +28,17 @@ if( !$o ) {
 
 <div id="page-content" class="page-product col-sm-10">
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-12">
+            <?php if( $_user && $_user->getIsAdmin() ) { ?>
+                <div class="admin-action">
+                    <a href="/product_edit.php?id=<?php echo $o->getId(); ?>" class="btn btn-danger" role="button">Edit</a>
+                </div>
+            <?php } ?>
             <h3><?php echo ucfirst($o->getName()); ?></h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
             <p><?php echo $o->getDescr(); ?></p>
             <form action="" method="post">
                 <input type="hidden" name="product_id" value="<?php echo $o->getId(); ?>" />
