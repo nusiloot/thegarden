@@ -130,13 +130,13 @@ class Order
     }
 
 
-    private $createdAt;
+    private $created_at;
 
     public function getCreatedAt() {
-        return $this->createdAt;
+        return $this->created_at;
     }
     public function setCreatedAt( $v ) {
-        $this->createdAt = $v;
+        $this->created_at = $v;
         return true;
     }
 
@@ -172,7 +172,7 @@ class Order
             return false;
         }
 
-        return $r->fetch_object('Order');
+        return $r->fetch_object( __CLASS__ );
     }
 
     
@@ -184,14 +184,14 @@ class Order
         if( $user_id ) {
             $q .= " WHERE user_id='".$user_id."'";
         }
-        $q .= " ORDER by createdAt DESC";
+        $q .= " ORDER by created_at DESC";
         $r = $db->query( $q );
         if( !$r ) {
             return false;
         }
 
         $t = [];
-        while( ($o=$r->fetch_object('Order')) ) {
+        while( ($o=$r->fetch_object(__CLASS__)) ) {
             $t[ $o->getId() ] = $o;
         }
 

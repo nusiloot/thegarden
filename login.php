@@ -1,6 +1,6 @@
 <?php
 
-include( 'header.php' );
+include( 'templates/header.php' );
 
 if( isset($_GET['logout']) )
 {
@@ -148,6 +148,6 @@ elseif( isset($_GET['email']) )
 
 <?php
 
-include( 'footer.php' );
+include( 'templates/footer.php' );
 
 ?>

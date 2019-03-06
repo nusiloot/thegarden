@@ -1,6 +1,6 @@
 <?php
 
-include( 'header.php' );
+include( 'templates/header.php' );
 
 if( !$_cart->getTotalItem() ) { 
     header( 'Location: /index.php' );
@@ -144,6 +144,6 @@ if( isset($_GET['confirm']) )
 
 <?php
 
-include( 'footer.php' );
+include( 'templates/footer.php' );
 
 ?>

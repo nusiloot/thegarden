@@ -87,14 +87,39 @@ class User
     }
 
 
-    private $createdAt;
+    private $is_admin;
+
+    public function getIsAdmin() {
+        return $this->is_admin;
+    }
+    public function setIsAdmin( $v ) {
+        $this->is_admin = $v;
+        return true;
+    }
+
+
+    private $created_at;
 
     public function getCreatedAt() {
-        return $this->createdAt;
+        return $this->created_at;
     }
     public function setCreatedAt( $v ) {
-        $this->createdAt = $v;
+        $this->created_at = $v;
         return true;
+    }
+
+
+    public static function getUser( $id )
+    {
+        $db = Database::getInstance()->getConnection();
+
+        $q = "SELECT * FROM user WHERE id='".$id."'";
+        $r = $db->query( $q );
+        if( !$r || !$r->num_rows ) {
+            return false;
+        }
+
+        return $r->fetch_object(__CLASS__);
     }
 
 
@@ -130,7 +155,7 @@ class User
             return false;
         }
 
-        return $r->fetch_object( 'User' );
+        return $r->fetch_object( __CLASS__ );
     }
 
 
@@ -144,7 +169,7 @@ class User
             return false;
         }
 
-        return $r->fetch_object( 'User' );
+        return $r->fetch_object( __CLASS__ );
     }
 
 
@@ -177,7 +202,7 @@ class User
             return false;
         }
 
-        return $r->fetch_object( 'User' );
+        return $r->fetch_object( __CLASS__ );
     }
     public static function setCurrentUserId( $user_id )
     {
@@ -232,5 +257,38 @@ class User
                 WHERE id='".$this->id."'";
 
         return $db->query( $q );
+    }
+
+
+    public static function getUserList()
+    {
+        $db = Database::getInstance()->getConnection();
+
+        $q = "SELECT * FROM user ORDER by created_at DESC";
+        $r = $db->query( $q );
+        if( !$r ) {
+            return false;
+        }
+
+        $t = [];
+        while( ($o=$r->fetch_object(__CLASS__)) ) {
+            $t[ $o->getId() ] = $o;
+        }
+
+        return $t;
+    }
+
+
+    public static function getTotalUser()
+    {
+        $db = Database::getInstance()->getConnection();
+
+        $q = "SELECT COUNT(*) FROM user";
+        $r = $db->query( $q );
+        if( !$r ) {
+            return false;
+        }
+
+        return $r->fetch_row()[0];
     }
 }

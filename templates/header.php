@@ -6,7 +6,7 @@
  * - gwen -
  */
 
-require( 'config.php' );
+require( __DIR__.'/../config.php' );
 
 $_db = Database::getInstance();
 $_db->connect( $_config['DB_HOST'], $_config['DB_USER'], $_config['DB_PASS'], $_config['DB_BASE'] );
@@ -42,8 +42,8 @@ $_cart = Cart::getInstance();
             Util::removeNotification();
         } ?>
         <div id="header">
-            <h1>The garden</h1>
-            <h2>fresh fruits and vegetables</h2>
+            <h1 <?php if( $_user && $_user->getIsAdmin() ) { ?>class="admin"<?php } ?>>The garden</h1>
+            <h2 <?php if( $_user && $_user->getIsAdmin() ) { ?>class="admin"<?php } ?>>fresh fruits and vegetables</h2>
         </div>
         <div id="page-container" class="container">
             <div class="row">

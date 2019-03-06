@@ -64,13 +64,13 @@ class Product
     }
 
 
-    private $createdAt;
+    private $created_at;
 
     public function getCreatedAt() {
-        return $this->createdAt;
+        return $this->created_at;
     }
     public function setCreatedAt( $v ) {
-        $this->createdAt = $v;
+        $this->created_at = $v;
         return true;
     }
 
@@ -85,7 +85,7 @@ class Product
             return false;
         }
 
-        return $r->fetch_object('Product');
+        return $r->fetch_object( __CLASS__ );
     }
 
     
@@ -93,14 +93,14 @@ class Product
     {
         $db = Database::getInstance()->getConnection();
 
-        $q = "SELECT * FROM product ORDER by id";
+        $q = "SELECT * FROM product ORDER by created_at DESC";
         $r = $db->query( $q );
         if( !$r ) {
             return false;
         }
 
         $t = [];
-        while( ($o=$r->fetch_object('Product')) ) {
+        while( ($o=$r->fetch_object(__CLASS__)) ) {
             $t[ $o->getId() ] = $o;
         }
 

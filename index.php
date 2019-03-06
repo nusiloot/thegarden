@@ -1,6 +1,6 @@
 <?php
 
-include( 'header.php' );
+include( 'templates/header.php' );
 
 $t_product = Product::getProductList();
 
@@ -22,6 +22,6 @@ $t_product = Product::getProductList();
 
 <?php
 
-include( 'footer.php' );
+include( 'templates/footer.php' );
 
 ?>

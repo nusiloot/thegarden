@@ -1,6 +1,6 @@
 <?php
 
-include( 'header.php' );
+include( 'templates/header.php' );
 
 if( !isset($_GET['id']) ) {
     header( 'Location: /404.php' );
@@ -57,9 +57,9 @@ $t_product = Product::getProductList();
                     Credit card:
                 </div>
                 <div class="col-sm-6">
-                <?php echo $o->getCardNumber(); ?><br />
-                <?php echo $o->getCardExpiration(); ?><br />
-                <?php echo $o->getCardCvv(); ?>
+                    <?php echo $o->getCardNumber(); ?><br />
+                    <?php echo $o->getCardExpiration(); ?><br />
+                    <?php echo $o->getCardCvv(); ?>
                 </div>
             </div>
         </div>
@@ -98,6 +98,6 @@ $t_product = Product::getProductList();
 
 <?php
 
-include( 'footer.php' );
+include( 'templates/footer.php' );
 
 ?>

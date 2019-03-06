@@ -1,6 +1,6 @@
 <?php
 
-include( 'header.php' );
+include( 'templates/header.php' );
 
 if( isset($_POST['product_id']) )
 {
@@ -93,6 +93,6 @@ $t_product = Product::getProductList();
 
 <?php
 
-include( 'footer.php' );
+include( 'templates/footer.php' );
 
 ?>

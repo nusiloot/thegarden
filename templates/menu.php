@@ -26,3 +26,20 @@
     </li>
     <?php } ?>
 </ul>
+
+<?php if( $_user && $_user->getIsAdmin() ) { ?>
+    <br /><br/>
+    <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center active">
+            Admin
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="/orders.php">All orders</a>
+            <span class="badge badge-primary badge-pill"><?php echo Order::getTotalOrder(); ?></span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="/users.php">All users</a>
+            <span class="badge badge-primary badge-pill"><?php echo User::getTotalUser(); ?></span>
+        </li>
+    </ul>
+<?php } ?>

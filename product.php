@@ -1,6 +1,6 @@
 <?php
 
-include( 'header.php' );
+include( 'templates/header.php' );
 
 if( isset($_POST['product_id']) && isset($_POST['quantity']) )
 {
@@ -64,6 +64,6 @@ if( !$o ) {
 
 <?php
 
-include( 'footer.php' );
+include( 'templates/footer.php' );
 
 ?>
