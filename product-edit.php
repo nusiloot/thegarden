@@ -88,7 +88,7 @@ $f_image = null;
         <div class="col-sm-12">
             <?php if( $_user && $_user->getIsAdmin() ) { ?>
                 <div class="admin-action">
-                    <a href="/product_delete.php?id=<?php echo $o->getId(); ?>" class="btn btn-dark" role="button">Delete</a>
+                    <a href="/product-delete.php?id=<?php echo $o->getId(); ?>" class="btn btn-dark" role="button">Delete</a>
                 </div>
             <?php } ?>
             <h3>Edit product</h3>

@@ -51,7 +51,7 @@ $t_user = User::getUserList( $offset, $limit );
                             <td class="text-center"><?php echo Order::getTotalOrder($o->getId()); ?></td>
                             <td class="text-center"><?php echo date('Y-m-d',strtotime($o->getCreatedAt())); ?></td>
                             <td>
-                                <a href="/user_details.php?id=<?php echo $o->getId(); ?>" class="btn btn-warning" role="button">Details</a>
+                                <a href="/user-details.php?id=<?php echo $o->getId(); ?>" class="btn btn-warning" role="button">Details</a>
                             </td>
                         </tr>
                         <?php } ?>

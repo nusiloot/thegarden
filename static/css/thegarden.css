@@ -1,6 +1,9 @@
-#page-container {
-    margin-bottom: 20px;
-}
+.form-control::-webkit-input-placeholder { color: #ccc; }  /* WebKit, Blink, Edge */
+.form-control:-moz-placeholder { color: #ccc; }  /* Mozilla Firefox 4 to 18 */
+.form-control::-moz-placeholder { color: #ccc; }  /* Mozilla Firefox 19+ */
+.form-control:-ms-input-placeholder { color: #ccc; }  /* Internet Explorer 10-11 */
+.form-control::-ms-input-placeholder { color: #ccc; }  /* Microsoft Edge */
+  
 h1 {
     font-size: 4em;
 }
@@ -21,6 +24,9 @@ h2 {
 }
 h3 {
     margin-bottom: 50px;
+}
+#page-container {
+    margin-bottom: 20px;
 }
 .custom-file {
     margin-bottom: 15px;

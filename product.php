@@ -31,7 +31,7 @@ if( !$o ) {
         <div class="col-sm-12">
             <?php if( $_user && $_user->getIsAdmin() ) { ?>
                 <div class="admin-action">
-                    <a href="/product_edit.php?id=<?php echo $o->getId(); ?>" class="btn btn-danger" role="button">Edit</a>
+                    <a href="/product-edit.php?id=<?php echo $o->getId(); ?>" class="btn btn-danger" role="button">Edit</a>
                 </div>
             <?php } ?>
             <h3><?php echo ucfirst($o->getName()); ?></h3>

@@ -1,1 +1,7 @@
+# Disable directory listing
 #Options -Indexes
+
+# Cutom error pages
+#ErrorDocument 403 /404.php
+#ErrorDocument 404 /404.php
+#ErrorDocument 500 /404.php

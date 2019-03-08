@@ -41,6 +41,14 @@ $n_order = count( $t_order );
             </div>
             <div class="row form-group bbordered">
                 <div class="col-sm-5">
+                    Email:
+                </div>
+                <div class="col-sm-6">
+                    <?php echo $o->getEmail(); ?>
+                </div>
+            </div>
+            <div class="row form-group bbordered">
+                <div class="col-sm-5">
                     Name:
                 </div>
                 <div class="col-sm-6">
@@ -92,7 +100,7 @@ $n_order = count( $t_order );
                             <td class="text-right"><?php echo $o->getAmount(); ?>$</td>
                             <td class="text-center"><?php echo date('Y-m-d',strtotime($o->getCreatedAt())); ?></td>
                             <td>
-                                <a href="/order_details.php?id=<?php echo $o->getId(); ?>" class="btn btn-warning" role="button">Details</a>
+                                <a href="/order-details.php?id=<?php echo $o->getId(); ?>" class="btn btn-warning" role="button">Details</a>
                             </td>
                         </tr>
                         <?php } ?>

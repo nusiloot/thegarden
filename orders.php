@@ -25,9 +25,9 @@ if( isset($_GET['p']) && $_GET['p'] > 0 && $_GET['p'] <= $n_page ) {
 $offset = $limit * ($page-1);
 
 if( $_user->getIsAdmin() && isset($_GET['all']) ) {
-    $t_order = Order::getOrderList( $offset, $limit );
+    $t_order = Order::getOrderList( null, $offset, $limit );
 } else {
-    $t_order = Order::getOrderList( $offset, $limit, $_user->getId() );
+    $t_order = Order::getOrderList( $_user->getId(), $offset, $limit );
 }
 
 $n_order = count( $t_order );
@@ -67,7 +67,7 @@ $n_order = count( $t_order );
                             <td class="text-right"><?php echo $o->getAmount(); ?>$</td>
                             <td class="text-center"><?php echo date('Y-m-d',strtotime($o->getCreatedAt())); ?></td>
                             <td>
-                                <a href="/order_details.php?id=<?php echo $o->getId(); ?>" class="btn btn-warning" role="button">Details</a>
+                                <a href="/order-details.php?id=<?php echo $o->getId(); ?>" class="btn btn-warning" role="button">Details</a>
                             </td>
                         </tr>
                         <?php } ?>

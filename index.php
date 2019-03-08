@@ -22,7 +22,7 @@ $t_product = Product::getProductList( $offset, $limit );
         <div class="col-sm-12">
             <?php if( $_user && $_user->getIsAdmin() ) { ?>
                 <div class="admin-action">
-                    <a href="/product_new.php" class="btn btn-danger" role="button">Add product</a>
+                    <a href="/product-new.php" class="btn btn-danger" role="button">Add product</a>
                 </div>
             <?php } ?>
             <h3>Products</h3>

@@ -196,7 +196,7 @@ class Order
     }
 
     
-    public static function getOrderList( $offset=null, $limit=null, $user_id=null )
+    public static function getOrderList( $user_id=null, $offset=null, $limit=null )
     {
         $db = Database::getInstance()->getConnection();
 
