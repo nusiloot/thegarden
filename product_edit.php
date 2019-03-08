@@ -130,7 +130,7 @@ $f_image = null;
             </form>
         </div>
         <div class="col-sm-6">
-            <img src="/products/<?php echo $o->getImage(); ?>" class="card-img-top" alt="<?php echo $o->getName(); ?>">
+            <img src="/image.php?f=<?php echo $o->getImage(); ?>" class="card-img-top" alt="<?php echo $o->getName(); ?>" />
         </div>
     </div>
 </div>

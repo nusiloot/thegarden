@@ -21,6 +21,11 @@ $t_product = Product::getProductList();
 <div id="page-content" class="page-order-details col-sm-10">
     <div class="row">
         <div class="col-sm-12">
+            <?php if( $_user && $_user->getIsAdmin() ) { ?>
+                <div class="admin-action">
+                    <a href="/order_delete.php?id=<?php echo $o->getId(); ?>" class="btn btn-dark" role="button">Delete</a>
+                </div>
+            <?php } ?>
             <h3>Order details #<?php echo $o->getId(); ?></h3>
         </div>
     </div>
@@ -39,7 +44,7 @@ $t_product = Product::getProductList();
                     Name:
                 </div>
                 <div class="col-sm-6">
-                    <?php echo $o->getName(); ?>
+                    <a href="/user_details.php?id=<?php echo $o->getUserId(); ?>"><?php echo $o->getName(); ?></a>
                 </div>
             </div>
             <div class="row form-group bbordered">

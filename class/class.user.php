@@ -87,7 +87,7 @@ class User
     }
 
 
-    private $is_admin;
+    private $is_admin = 0;
 
     public function getIsAdmin() {
         return $this->is_admin;
@@ -215,13 +215,14 @@ class User
     {
         $db = Database::getInstance()->getConnection();
 
-        $q = "INSERT INTO user (name,email,password,address,zipcode,country) VALUES (
+        $q = "INSERT INTO user (name,email,password,address,zipcode,country,is_admin) VALUES (
             '".$this->name."',
             '".$this->email."',
             '".md5($this->password)."',
             '".$this->address."',
             '".$this->zipcode."',
-            '".$this->country."'
+            '".$this->country."',
+            '".$this->is_admin."'
         )";
         
         return $db->query( $q );
@@ -260,11 +261,28 @@ class User
     }
 
 
-    public static function getUserList()
+    public function delete()
+    {
+        $db = Database::getInstance()->getConnection();
+
+        if( !Order::deleteUserOrders($this->id) ) {
+            return false;
+        }
+
+        $q = "DELETE FROM user WHERE id='".$this->id."'";
+
+        return $db->query( $q );
+    }
+
+
+    public static function getUserList( $offset=null, $limit=null )
     {
         $db = Database::getInstance()->getConnection();
 
         $q = "SELECT * FROM user ORDER by created_at DESC";
+        if( !is_null($offset) && !is_null($limit) ) {
+            $q .= " LIMIT ".$offset.",".$limit;
+        }
         $r = $db->query( $q );
         if( !$r ) {
             return false;

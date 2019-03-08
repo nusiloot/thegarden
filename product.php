@@ -45,7 +45,7 @@ if( !$o ) {
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Price</label>
                     <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext" value="<?php echo $o->getPrice(); ?>$">
+                    <input type="text" readonly class="form-control-plaintext" value="<?php echo $o->getPrice(); ?>$" />
                     </div>
                 </div>
                 <div class="form-group row">
@@ -66,7 +66,7 @@ if( !$o ) {
             </form>
         </div>
         <div class="col-sm-6">
-            <img src="/products/<?php echo $o->getImage(); ?>" class="card-img-top" alt="<?php echo $o->getName(); ?>">
+            <img src="/products/<?php echo $o->getImage(); ?>" class="card-img-top" alt="<?php echo $o->getName(); ?>" />
         </div>
     </div>
 </div>

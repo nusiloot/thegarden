@@ -8,7 +8,7 @@ if( !$_cart->getTotalItem() ) {
 }
 
 if( !$_user ) {
-    header( 'Location: /login.php' );
+    header( 'Location: /login.php?r=/checkout.php' );
     exit();
 }
 
@@ -82,11 +82,11 @@ if( isset($_GET['confirm']) )
         <div class="total-amount row">
             <div class="col-sm-2 form-group mb-2">
                 <label class="sr-only">Total amount</label>
-                <input type="text" readonly class="form-control-plaintext"  value="Total amount">
+                <input type="text" readonly class="form-control-plaintext"  value="Total amount" />
             </div>
             <div class="col-sm-1 form-group mx-sm-1 mb-2">
             <label class="sr-only">Total amount</label>
-                <input type="text" readonly class="form-control-plaintext"  value="<?php echo $_cart->getTotalAmount(); ?>$">
+                <input type="text" readonly class="form-control-plaintext"  value="<?php echo $_cart->getTotalAmount(); ?>$" />
             </div>
             <div class="col-sm-2">
                 <button type="submit" class="btn btn-success mb-2">Confirm</button>
@@ -96,22 +96,22 @@ if( isset($_GET['confirm']) )
             <div class="col-sm-5">
                     <div class="form-group">
                         <label >Name</label>
-                        <input type="text" name="name" value="<?php if( !isset($f_error['name']) ) { echo $f_name; } ?>" class="form-control" required="required">
+                        <input type="text" name="name" value="<?php if( !isset($f_error['name']) ) { echo $f_name; } ?>" class="form-control" required="required" />
                         <?php if( isset($f_error['name']) ) { ?><div class="invalid-feedback"><?php echo $f_error['name']; ?></div><?php } ?>
                     </div>
                     <div class="form-group">
                         <label>Address</label>
-                        <input type="text" name="address" value="<?php if( !isset($f_error['address']) ) { echo $f_address; } ?>" class="form-control" required="required">
+                        <input type="text" name="address" value="<?php if( !isset($f_error['address']) ) { echo $f_address; } ?>" class="form-control" required="required" />
                         <?php if( isset($f_error['address']) ) { ?><div class="invalid-feedback"><?php echo $f_error['address']; ?></div><?php } ?>
                     </div>
                     <div class="form-group">
                         <label>Zipcode</label>
-                        <input type="text" name="zipcode" value="<?php if( !isset($f_error['zipcode']) ) { echo $f_zipcode; } ?>" class="form-control" required="required">
+                        <input type="text" name="zipcode" value="<?php if( !isset($f_error['zipcode']) ) { echo $f_zipcode; } ?>" class="form-control" required="required" />
                         <?php if( isset($f_error['zipcode']) ) { ?><div class="invalid-feedback"><?php echo $f_error['zipcode']; ?></div><?php } ?>
                     </div>
                     <div class="form-group">
                         <label>Country</label>
-                        <input type="text" name="country" value="<?php if( !isset($f_error['country']) ) { echo $f_country; } ?>" class="form-control" required="required">
+                        <input type="text" name="country" value="<?php if( !isset($f_error['country']) ) { echo $f_country; } ?>" class="form-control" required="required" />
                         <?php if( isset($f_error['country']) ) { ?><div class="invalid-feedback"><?php echo $f_error['country']; ?></div><?php } ?>
                     </div>
             </div>
@@ -119,17 +119,17 @@ if( isset($_GET['confirm']) )
             <div class="col-sm-5">
                 <div class="form-group">
                     <label>Credit card</label>
-                    <input type="text" name="card_number" value="<?php if( !isset($f_error['card_number']) ) { echo $f_card_number; } ?>" class="form-control" required="required" placeholder="1234123412341234" maxlength="16">
+                    <input type="text" name="card_number" value="<?php if( !isset($f_error['card_number']) ) { echo $f_card_number; } ?>" class="form-control" required="required" placeholder="1234123412341234" maxlength="16" />
                     <?php if( isset($f_error['card_number']) ) { ?><div class="invalid-feedback"><?php echo $f_error['card_number']; ?></div><?php } ?>
                 </div>
                 <div class="form-group">
                     <label>Expiration</label>
-                    <input type="text" name="card_expiration" value="<?php if( !isset($f_error['card_expiration']) ) { echo $f_card_expiration; } ?>" class="form-control" required="required" placeholder="09/19" maxlength="5">
+                    <input type="text" name="card_expiration" value="<?php if( !isset($f_error['card_expiration']) ) { echo $f_card_expiration; } ?>" class="form-control" required="required" placeholder="09/19" maxlength="5" />
                     <?php if( isset($l_error['card_expiration']) ) { ?><div class="invalid-feedback"><?php echo $l_error['card_expiration']; ?></div><?php } ?>
                 </div>
                 <div class="form-group">
                     <label>CVV</label>
-                    <input type="text" name="card_cvv" value="<?php if( !isset($f_error['card_cvv']) ) { echo $f_card_cvv; } ?>" class="form-control" required="required" placeholder="123" maxlength="3">
+                    <input type="text" name="card_cvv" value="<?php if( !isset($f_error['card_cvv']) ) { echo $f_card_cvv; } ?>" class="form-control" required="required" placeholder="123" maxlength="3" />
                     <?php if( isset($l_error['card_cvv']) ) { ?><div class="invalid-feedback"><?php echo $l_error['card_cvv']; ?></div><?php } ?>
                 </div>
             </div>

@@ -4,7 +4,7 @@
     </div>
     <div class="card-body">
         <p class="card-text">
-            <a href="/product.php?id=<?php echo $o->getId(); ?>"><img src="/products/<?php echo $o->getImage(); ?>" class="card-img-top" alt="<?php echo $o->getName(); ?>"></a>
+            <a href="/product.php?id=<?php echo $o->getId(); ?>"><img src="/products/<?php echo $o->getImage(); ?>" class="card-img-top" alt="<?php echo $o->getName(); ?>" /></a>
         </p>
     </div>
     <div class="card-footer text-muted">

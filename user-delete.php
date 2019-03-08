@@ -24,5 +24,5 @@ if( $o->delete() ) {
     Util::setNotification( 'danger', 'An error occured.' );
 }
 
-header( 'Location: /' );
+header( 'Location: /users.php' );
 exit();

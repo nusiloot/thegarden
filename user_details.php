@@ -13,11 +13,19 @@ if( !$o ) {
     exit();
 }
 
+$t_order = Order::getOrderList( $o->getId() );
+$n_order = count( $t_order );
+
 ?>
 
 <div id="page-content" class="page-user-details col-sm-10">
     <div class="row">
         <div class="col-sm-12">
+            <?php if( $_user && $_user->getIsAdmin() ) { ?>
+                <div class="admin-action">
+                    <a href="/user-delete.php?id=<?php echo $o->getId(); ?>" class="btn btn-dark" role="button">Delete</a>
+                </div>
+            <?php } ?>
             <h3>User details #<?php echo $o->getId(); ?></h3>
         </div>
     </div>
@@ -61,6 +69,36 @@ if( !$o ) {
                     <?php } ?>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <?php if( !$n_order ) { ?>
+                No order yet.
+            <?php } else { ?>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th class="text-right">Amount</th>
+                            <th class="text-center">Created at</th>
+                            <th width="60"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach( $t_order as $o ) { ?>
+                        <tr>
+                            <td class="text-center"><?php echo $o->getId(); ?></td>
+                            <td class="text-right"><?php echo $o->getAmount(); ?>$</td>
+                            <td class="text-center"><?php echo date('Y-m-d',strtotime($o->getCreatedAt())); ?></td>
+                            <td>
+                                <a href="/order_details.php?id=<?php echo $o->getId(); ?>" class="btn btn-warning" role="button">Details</a>
+                            </td>
+                        </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+            <?php } ?>
         </div>
     </div>
 </div>

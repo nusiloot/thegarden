@@ -96,27 +96,27 @@ if( isset($_GET['updatepassword']) )
             <form action="?updateinfos" method="post" <?php if( count($r_error) ) {?> class="was-validated" <?php } ?>>
                 <div class="form-group">
                     <label>Email address</label>
-                    <input type="email" name="email" value="<?php if( !isset($r_error['email']) ) { echo $r_email; } ?>" class="form-control" required="required">
+                    <input type="email" name="email" value="<?php if( !isset($r_error['email']) ) { echo $r_email; } ?>" class="form-control" required="required" />
                     <?php if( isset($r_error['email']) ) { ?><div class="invalid-feedback"><?php echo $r_error['email']; ?></div><?php } ?>
                 </div>
                 <div class="form-group">
                     <label >Name</label>
-                    <input type="text" name="name" value="<?php if( !isset($r_error['name']) ) { echo $r_name; } ?>" class="form-control" required="required">
+                    <input type="text" name="name" value="<?php if( !isset($r_error['name']) ) { echo $r_name; } ?>" class="form-control" required="required" />
                     <?php if( isset($r_error['name']) ) { ?><div class="invalid-feedback"><?php echo $r_error['name']; ?></div><?php } ?>
                 </div>
                 <div class="form-group">
                     <label>Address</label>
-                    <input type="text" name="address" value="<?php if( !isset($r_error['address']) ) { echo $r_address; } ?>" class="form-control" required="required">
+                    <input type="text" name="address" value="<?php if( !isset($r_error['address']) ) { echo $r_address; } ?>" class="form-control" required="required" />
                     <?php if( isset($r_error['address']) ) { ?><div class="invalid-feedback"><?php echo $r_error['address']; ?></div><?php } ?>
                 </div>
                 <div class="form-group">
                     <label>Zipcode</label>
-                    <input type="text" name="zipcode" value="<?php if( !isset($r_error['zipcode']) ) { echo $r_zipcode; } ?>" class="form-control" required="required">
+                    <input type="text" name="zipcode" value="<?php if( !isset($r_error['zipcode']) ) { echo $r_zipcode; } ?>" class="form-control" required="required" />
                     <?php if( isset($r_error['zipcode']) ) { ?><div class="invalid-feedback"><?php echo $r_error['zipcode']; ?></div><?php } ?>
                 </div>
                 <div class="form-group">
                     <label>Country</label>
-                    <input type="text" name="country" value="<?php if( !isset($r_error['country']) ) { echo $r_country; } ?>" class="form-control" required="required">
+                    <input type="text" name="country" value="<?php if( !isset($r_error['country']) ) { echo $r_country; } ?>" class="form-control" required="required" />
                     <?php if( isset($r_error['country']) ) { ?><div class="invalid-feedback"><?php echo $r_error['country']; ?></div><?php } ?>
                 </div>
                 <button type="submit" class="btn btn-primary">Update</button>
@@ -127,12 +127,12 @@ if( isset($_GET['updatepassword']) )
             <form action="?updatepassword" method="post" <?php if( count($l_error) ) {?> class="was-validated" <?php } ?>>
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="text" name="password" value="" class="form-control" required="required">
+                    <input type="text" name="password" value="" class="form-control" required="required" />
                     <?php if( isset($l_error['password']) ) { ?><div class="invalid-feedback"><?php echo $l_error['password']; ?></div><?php } ?>
                 </div>
                 <div class="form-group">
                     <label>Confirm</label>
-                    <input type="text" name="confirm" value="" class="form-control" required="required">
+                    <input type="text" name="confirm" value="" class="form-control" required="required" />
                     <?php if( isset($l_error['confirm']) ) { ?><div class="invalid-feedback"><?php echo $l_error['confirm']; ?></div><?php } ?>
                 </div>
                 <button type="submit" class="btn btn-primary">Update</button>

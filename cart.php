@@ -26,11 +26,11 @@ $t_product = Product::getProductList();
     <div class="total-amount row">
         <div class="col-sm-2 form-group mb-2">
             <label class="sr-only">Total amount</label>
-            <input type="text" readonly class="form-control-plaintext"  value="Total amount">
+            <input type="text" readonly class="form-control-plaintext"  value="Total amount" />
         </div>
         <div class="col-sm-1 form-group mx-sm-1 mb-2">
         <label class="sr-only">Total amount</label>
-            <input type="text" readonly class="form-control-plaintext"  value="<?php echo $_cart->getTotalAmount(); ?>$">
+            <input type="text" readonly class="form-control-plaintext"  value="<?php echo $_cart->getTotalAmount(); ?>$" />
         </div>
         <div class="col-sm-2">
             <a href="/checkout.php" class="btn btn-success" role="button">Checkout</a>
@@ -78,11 +78,11 @@ $t_product = Product::getProductList();
         <div class="total-amount row">
         <div class="col-sm-2 form-group mb-2">
             <label class="sr-only">Total amount</label>
-            <input type="text" readonly class="form-control-plaintext"  value="Total amount">
+            <input type="text" readonly class="form-control-plaintext"  value="Total amount" />
         </div>
         <div class="col-sm-1 form-group mx-sm-1 mb-2">
         <label class="sr-only">Total amount</label>
-            <input type="text" readonly class="form-control-plaintext"  value="<?php echo $_cart->getTotalAmount(); ?>$">
+            <input type="text" readonly class="form-control-plaintext"  value="<?php echo $_cart->getTotalAmount(); ?>$" />
         </div>
         <div class="col-sm-2">
             <a href="/checkout.php" class="btn btn-success" role="button">Checkout</a>

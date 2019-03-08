@@ -2,7 +2,18 @@
 
 include( 'templates/header.php' );
 
-$t_product = Product::getProductList();
+$n_product = Product::getTotalProduct();
+$limit = $_config['PRODUCTS_LIMIT'];
+$n_page = ceil( $n_product / $limit );
+
+if( isset($_GET['p']) && $_GET['p'] > 0 && $_GET['p'] <= $n_page ) {
+    $page = $_GET['p'];
+} else {
+    $page = 1;
+}
+
+$offset = $limit * ($page-1);
+$t_product = Product::getProductList( $offset, $limit );
 
 ?>
 
@@ -23,6 +34,7 @@ $t_product = Product::getProductList();
                 include( 'templates/product-card.php' );
         } ?>
     </div>
+    <?php include( 'templates/pagination.php' ); ?>
 </div>
 
 <?php

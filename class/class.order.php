@@ -162,6 +162,26 @@ class Order
     }
 
 
+    public function delete()
+    {
+        $db = Database::getInstance()->getConnection();
+
+        $q = "DELETE FROM `order` WHERE id='".$this->id."'";
+        
+        return $db->query( $q );
+    }
+
+
+    public static function deleteUserOrders( $user_id )
+    {
+        $db = Database::getInstance()->getConnection();
+
+        $q = "DELETE FROM `order` WHERE user_id='".$user_id."'";
+
+        return $db->query( $q );
+    }
+
+
     public static function getOrder( $id )
     {
         $db = Database::getInstance()->getConnection();
@@ -176,7 +196,7 @@ class Order
     }
 
     
-    public static function getOrderList( $user_id=null )
+    public static function getOrderList( $offset=null, $limit=null, $user_id=null )
     {
         $db = Database::getInstance()->getConnection();
 
@@ -185,6 +205,9 @@ class Order
             $q .= " WHERE user_id='".$user_id."'";
         }
         $q .= " ORDER by created_at DESC";
+        if( !is_null($offset) && !is_null($limit) ) {
+            $q .= " LIMIT ".$offset.",".$limit;
+        }
         $r = $db->query( $q );
         if( !$r ) {
             return false;

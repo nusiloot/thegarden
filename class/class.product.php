@@ -128,11 +128,14 @@ class Product
     }
 
     
-    public static function getProductList()
+    public static function getProductList( $offset=null, $limit=null )
     {
         $db = Database::getInstance()->getConnection();
 
         $q = "SELECT * FROM product ORDER by created_at DESC";
+        if( !is_null($offset) && !is_null($limit) ) {
+            $q .= " LIMIT ".$offset.",".$limit;
+        }
         $r = $db->query( $q );
         if( !$r ) {
             return false;

@@ -8,10 +8,29 @@ if( !$_user ) {
 }
 
 if( $_user->getIsAdmin() && isset($_GET['all']) ) {
-    $t_order = Order::getOrderList();
+    $n_order = Order::getTotalOrder();
 } else {
-    $t_order = Order::getOrderList( $_user->getId() );
+    $n_order = Order::getTotalOrder( $_user->getId() );
 }
+
+$limit = $_config['ORDERS_LIMIT'];
+$n_page = ceil( $n_order / $limit );
+
+if( isset($_GET['p']) && $_GET['p'] > 0 && $_GET['p'] <= $n_page ) {
+    $page = $_GET['p'];
+} else {
+    $page = 1;
+}
+
+$offset = $limit * ($page-1);
+
+if( $_user->getIsAdmin() && isset($_GET['all']) ) {
+    $t_order = Order::getOrderList( $offset, $limit );
+} else {
+    $t_order = Order::getOrderList( $offset, $limit, $_user->getId() );
+}
+
+$n_order = count( $t_order );
 
 ?>
 
@@ -27,7 +46,7 @@ if( $_user->getIsAdmin() && isset($_GET['all']) ) {
     </div>
     <div class="row">
         <div class="col-sm-12">
-            <?php if( !Order::getTotalOrder($_user->getId()) ) { ?>
+            <?php if( !$n_order ) { ?>
                 No order yet.
             <?php } else { ?>
                 <table class="table">
@@ -36,7 +55,7 @@ if( $_user->getIsAdmin() && isset($_GET['all']) ) {
                             <th class="text-center">#</th>
                             <th>Name</th>
                             <th class="text-right">Amount</th>
-                            <th class="text-center">Date</th>
+                            <th class="text-center">Created at</th>
                             <th width="60"></th>
                         </tr>
                     </thead>
@@ -57,6 +76,7 @@ if( $_user->getIsAdmin() && isset($_GET['all']) ) {
             <?php } ?>
         </div>
     </div>
+    <?php include( 'templates/pagination.php' ); ?>
 </div>
 
 <?php
