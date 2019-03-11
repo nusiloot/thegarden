@@ -118,6 +118,13 @@ class Product
     {
         $db = Database::getInstance()->getConnection();
 
+        /*$q = "SELECT * FROM product WHERE id=?";
+        $stmt = $db->prepare( $q );
+        $stmt->bind_param( 'd', $id );
+        $stmt->execute();
+        $r = $stmt->get_result();
+        return $r->fetch_object( __CLASS__ );*/
+
         $q = "SELECT * FROM product WHERE id='".$id."'";
         $r = $db->query( $q );
         if( !$r || !$r->num_rows ) {

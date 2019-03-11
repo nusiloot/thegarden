@@ -3,7 +3,7 @@
 include( 'templates/header.php' );
 
 if( !$_user || !$_user->getIsAdmin() ) {
-    header( 'Location: /404.php' );
+    header( 'Location: /404.php', 404 );
     exit();
 }
 
@@ -13,14 +13,14 @@ if( isset($_GET['edit']) )
 {
     if( !isset($_POST['id']) ) {
         Util::setNotification( 'danger', 'An error occured.' );
-        header( 'Location: /404.php' );
+        header( 'Location: /404.php', 404 );
         exit();
     }
     
     $product = Product::getProduct( $_POST['id'] );
     if( !$product ) {
         Util::setNotification( 'danger', 'An error occured.' );
-        header( 'Location: /404.php' );
+        header( 'Location: /404.php', 404 );
         exit();
     }
     
@@ -66,13 +66,13 @@ if( isset($_GET['edit']) )
 
 
 if( !isset($_GET['id']) ) {
-    header( 'Location: /404.php' );
+    header( 'Location: /404.php', 404 );
     exit();
 }
 
 $o = Product::getProduct( $_GET['id'] );
 if( !$o ) {
-    header( 'Location: /404.php' );
+    header( 'Location: /404.php', 404 );
     exit();
 }
 

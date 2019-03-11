@@ -3,13 +3,13 @@
 include( 'templates/header.php' );
 
 if( !isset($_GET['id']) ) {
-    header( 'Location: /404.php' );
+    header( 'Location: /404.php', 404 );
     exit();
 }
 
 $o = Order::getOrder( $_GET['id'] );
 if( !$o ) {
-    header( 'Location: /404.php' );
+    header( 'Location: /404.php', 404 );
     exit();
 }
 

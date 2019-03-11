@@ -3,7 +3,7 @@
 include( 'templates/header.php' );
 
 if( !$_user || !$_user->getIsAdmin() ) {
-    header( 'Location: /404.php' );
+    header( 'Location: /404.php', 404 );
     exit();
 }
 

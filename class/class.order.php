@@ -78,10 +78,10 @@ class Order
     private $card_number;
 
     public function getCardNumber() {
-        return $this->card_number;
+        return base64_decode( $this->card_number );
     }
     public function setCardNumber( $v ) {
-        $this->card_number = $v;
+        $this->card_number = base64_encode( $v );
         return true;
     }
 
