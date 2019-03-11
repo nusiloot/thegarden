@@ -131,7 +131,7 @@ class Product
             return false;
         }
 
-        return $r->fetch_object( __CLASS__ );
+        return $r->fetch_object( __CLASS__
     }
 
     
