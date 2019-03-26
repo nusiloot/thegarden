@@ -129,7 +129,7 @@ class User
         
         $q = "SELECT COUNT(*) FROM user WHERE email='".$email."'";
         if( ($u=User::getCurrentUserId()) ) {
-            $q .= " AND user_id!='".$u."'";
+            $q .= " AND id!='".$u."'";
         }
         
         $r = $db->query( $q );

@@ -1,3 +1,6 @@
+#SetEnv THEGARDEN_USER test
+#SetEnv THEGARDEN_PASS test
+
 # Disable directory listing
 #Options -Indexes
 
@@ -5,3 +8,4 @@
 #ErrorDocument 403 /404.php
 #ErrorDocument 404 /404.php
 #ErrorDocument 500 /404.php
+

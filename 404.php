@@ -2,6 +2,8 @@
 
 include( 'templates/header.php' );
 
+//header( 'HTTP/1.0 404 Not Found' );
+
 ?>
 
 <div id="page-content" class="col-sm-10">
