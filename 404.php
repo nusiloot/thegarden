@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * I don't believe in license
+ * You can do whatever you want with this program
+ * - gwen -
+ */
+
 include( 'templates/header.php' );
 
 //header( 'HTTP/1.0 404 Not Found' );

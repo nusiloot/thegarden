@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * I don't believe in license
+ * You can do whatever you want with this program
+ * - gwen -
+ */
+
 include( 'templates/header.php' );
 
 if( isset($_POST['product_id']) && isset($_POST['quantity']) )
