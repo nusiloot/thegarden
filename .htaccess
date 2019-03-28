@@ -9,3 +9,5 @@
 #ErrorDocument 404 /404.php
 #ErrorDocument 500 /404.php
 
+#RedirectMatch 403 /\\.git(/.*|$)
+
