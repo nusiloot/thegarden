@@ -8,7 +8,6 @@
 
 include( 'templates/header.php' );
 
-
 if( !$_user ) {
     header( 'Location: /login.php' );
     exit();
