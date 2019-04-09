@@ -8,7 +8,7 @@
 
 include( 'templates/header.php' );
 
-if( !$_cart->getTotalItem() ) { 
+if( !$_cart->getTotalItem() ) {
     header( 'Location: /index.php' );
     exit();
 }

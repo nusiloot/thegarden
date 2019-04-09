@@ -38,7 +38,7 @@ $_cart = Cart::getInstance();
                     <?php echo $n['text']; ?>
                 </div>
             </div>
-        <?php 
+        <?php
             Util::removeNotification();
         } ?>
         <div id="header">

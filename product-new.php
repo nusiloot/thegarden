@@ -47,7 +47,7 @@ if( isset($_GET['create']) )
             if( $c ) {
                 Util::setNotification( 'success', 'The product has been successfully created.' );
             } else {
-                Util::setNotification( 'danger', 'An error occured.' );    
+                Util::setNotification( 'danger', 'An error occured.' );
             }
         } else {
             Util::setNotification( 'danger', 'An error occured.' );
