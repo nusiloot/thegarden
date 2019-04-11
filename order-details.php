@@ -19,10 +19,10 @@ if( !$o ) {
     exit();
 }
 
-// if( $o->getUserId() != $_user->getId() ) {
-//     header( 'Location: /404.php', 404 );
-//     exit();
-// }
+if( $o->getUserId() != $_user->getId() ) {
+    header( 'Location: /404.php', 404 );
+    exit();
+}
 
 $c = unserialize( $o->getCart() );
 $t_product = Product::getProductList();

@@ -20,8 +20,8 @@ function __autoload( $c ) {
 
 $_config['DB_HOST'] = 'thegarden.local.net';
 $_config['DB_BASE'] = 'thegarden';
-// $_config['DB_USER'] = 'superuser';
-// $_config['DB_PASS'] = 'superpass';
+$_config['DB_USER'] = 'superuser';
+$_config['DB_PASS'] = 'superpass';
 $_config['DB_USER'] = getenv('THEGARDEN_USER');
 $_config['DB_PASS'] = getenv('THEGARDEN_PASS');
 
