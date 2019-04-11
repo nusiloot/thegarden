@@ -13,7 +13,6 @@ if( !$_user ) {
     exit();
 }
 
-
 if( $_user->getIsAdmin() && isset($_GET['all']) ) {
     $n_order = Order::getTotalOrder();
 } else {
