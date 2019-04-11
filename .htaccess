@@ -1,8 +1,6 @@
 #SetEnv THEGARDEN_USER test
 #SetEnv THEGARDEN_PASS test
 
-# Disable directory listing
-#Options -Indexes
 
 # Cutom error pages
 #ErrorDocument 403 /404.php
